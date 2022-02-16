@@ -85,7 +85,7 @@ func move(state GameState) BattlesnakeMoveResponse {
  }
  if myNeck.Y == (boardHeight - 1) {
    possibleMoves["up"] = false
-   log.printf("Top Wall")
+   log.Printf("Top Wall")
  }
 
 	// TODO: Step 2 - Don't hit yourself.
