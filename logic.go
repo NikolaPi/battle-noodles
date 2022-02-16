@@ -19,10 +19,10 @@ func info() BattlesnakeInfoResponse {
 	log.Println("INFO")
 	return BattlesnakeInfoResponse{
 		APIVersion: "1",
-		Author:     "NikolaPi",        // TODO: Your Battlesnake username
-		Color:      "#42a1f5", // TODO: Personalize
-		Head:       "default", // TODO: Personalize
-		Tail:       "default", // TODO: Personalize
+		Author:     "NikolaPi", // TODO: Your Battlesnake username
+		Color:      "#42a1f5",  // TODO: Personalize
+		Head:       "default",  // TODO: Personalize
+		Tail:       "default",  // TODO: Personalize
 	}
 }
 
@@ -65,29 +65,27 @@ func move(state GameState) BattlesnakeMoveResponse {
 
 	// TODO: Step 1 - Don't hit walls.
 	// Use information in GameState to prevent your Battlesnake from moving beyond the boundaries of the board.
- boardWidth := state.Board.Width
- boardHeight := state.Board.Height
-  
-  possibleMoves["right"] = false
+	boardWidth := state.Board.Width
+	boardHeight := state.Board.Height
 
+	possibleMoves["right"] = false
 
- if myNeck.X == 0 {
-   possibleMoves["left"] = false
-   log.Printf("Left Wall")
- }
- if myNeck.Y == 0 {
-   possibleMoves["down"] = false
-   log.Printf("Bottom Wall")
- }
- if myNeck.X == (boardWidth - 1) {
-   possibleMoves["right"] = false
-   log.Printf("Right Wall")
- }
- if myNeck.Y == (boardHeight - 1) {
-   possibleMoves["up"] = false
-   log.Printf("Top Wall")
- }
- log.Printf("(%v, %v)", myNeck.X, myNeck.Y)
+	if myHead.X == 0 {
+		possibleMoves["left"] = false
+		log.Printf("Left Wall")
+	}
+	if myHead.Y == 0 {
+		possibleMoves["down"] = false
+		log.Printf("Bottom Wall")
+	}
+	if myHead.X == (boardWidth - 1) {
+		possibleMoves["right"] = false
+		log.Printf("Right Wall")
+	}
+	if myHead.Y == (boardHeight - 1) {
+		possibleMoves["up"] = false
+		log.Printf("Top Wall")
+	}
 
 	// TODO: Step 2 - Don't hit yourself.
 	// Use information in GameState to prevent your Battlesnake from colliding with itself.
