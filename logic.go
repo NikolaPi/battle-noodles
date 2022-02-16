@@ -100,7 +100,7 @@ func move(state GameState) BattlesnakeMoveResponse {
 	// Finally, choose a move from the available safe moves.
 	// TODO: Step 5 - Select a move to make based on strategy, rather than random.
 
-	log.Printf("(%v, %v)", myHead.X, myHead.Y)
+	log.Printf("(%v, %v). Possible moves: %v", myHead.X, myHead.Y, len(possibleMoves))
 
 	var nextMove string
 
