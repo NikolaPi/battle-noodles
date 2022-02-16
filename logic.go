@@ -67,18 +67,25 @@ func move(state GameState) BattlesnakeMoveResponse {
 	// Use information in GameState to prevent your Battlesnake from moving beyond the boundaries of the board.
  boardWidth := state.Board.Width
  boardHeight := state.Board.Height
+  
+  possibleMoves["right"] = false
+
 
  if myNeck.X == 0 {
    possibleMoves["left"] = false
+   log.Printf("Left Wall")
  }
  if myNeck.Y == 0 {
    possibleMoves["down"] = false
+   log.Printf("Bottom Wall")
  }
  if myNeck.X == (boardWidth - 1) {
    possibleMoves["right"] = false
+   log.Printf("Right Wall")
  }
  if myNeck.Y == (boardHeight - 1) {
    possibleMoves["up"] = false
+   log.printf("Top Wall")
  }
 
 	// TODO: Step 2 - Don't hit yourself.
