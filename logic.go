@@ -87,6 +87,7 @@ func move(state GameState) BattlesnakeMoveResponse {
    possibleMoves["up"] = false
    log.Printf("Top Wall")
  }
+ log.Printf("(%v, %v)", myNeck.X, myNeck.Y)
 
 	// TODO: Step 2 - Don't hit yourself.
 	// Use information in GameState to prevent your Battlesnake from colliding with itself.
