@@ -110,7 +110,7 @@ func move(state GameState) BattlesnakeMoveResponse {
 	}
 
 	//debug print statement
-	log.Printf("(%v, %v). Possible moves: %v", myHead.X, myHead.Y, len(safeMoves))
+	log.Printf("(%v, %v). Possible moves: %v", myHead.X, myHead.Y, safeMoves)
 
 	if len(safeMoves) == 0 {
 		nextMove = "down"
